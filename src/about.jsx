@@ -119,6 +119,7 @@ const AboutUs = () => {
         <div className="text-slate-700 text-xs font-black tracking-[0.4em] uppercase">
           &copy; 2026 CareerPath AI. All rights reserved.
         </div>
+        <div></div>
       </footer>
     </div>
   );
