@@ -17,7 +17,7 @@ const CircularProgress = ({ value, max, color, label, subLabel }) => {
                         stroke="currentColor"
                         strokeWidth="8"
                         fill="transparent"
-                        className="text-slate-700"
+                        className="text-emerald-50"
                     />
                     {/* Progress Circle */}
                     <circle
@@ -34,10 +34,10 @@ const CircularProgress = ({ value, max, color, label, subLabel }) => {
                     />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-2xl font-bold text-white">{value}{max === 10 ? '/10' : '%'}</span>
+                    <span className="text-2xl font-bold text-[#15803D]">{value}{max === 10 ? '/10' : '%'}</span>
                 </div>
             </div>
-            <p className="font-medium text-slate-200 mt-2">{label}</p>
+            <p className="font-medium text-[#0F172A] mt-2">{label}</p>
             <p className="text-xs text-slate-500">{subLabel}</p>
         </div>
     );
@@ -45,14 +45,14 @@ const CircularProgress = ({ value, max, color, label, subLabel }) => {
 
 const SkillGapChart = ({ analysis }) => {
     return (
-        <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 h-full flex flex-col items-center justify-center">
-            <h3 className="text-xl font-bold text-white mb-6 w-full text-center md:text-left">Match Analysis</h3>
+        <div className="bg-white/80 p-6 rounded-2xl border border-emerald-100 shadow-sm backdrop-blur-sm h-full flex flex-col items-center justify-center">
+            <h3 className="text-xl font-bold text-[#15803D] mb-6 w-full text-center md:text-left">Match Analysis</h3>
 
             <div className="flex flex-col md:flex-row items-center justify-around w-full gap-8">
                 <CircularProgress
                     value={analysis.match_percentage}
                     max={100}
-                    color="text-emerald-500"
+                    color="text-emerald-600"
                     label="Match Score"
                     subLabel="Overall Fit"
                 />
@@ -60,7 +60,7 @@ const SkillGapChart = ({ analysis }) => {
                 <CircularProgress
                     value={analysis.readiness_score}
                     max={10}
-                    color="text-blue-500"
+                    color="text-[#22C55E]"
                     label="Readiness"
                     subLabel="Job Preparedness"
                 />

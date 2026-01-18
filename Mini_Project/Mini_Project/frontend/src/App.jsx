@@ -38,12 +38,12 @@ function App() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-900 text-slate-50 selection:bg-blue-500/30">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#0f172a] to-black -z-10" />
+        <div className="min-h-screen bg-[#F0FDF4] text-[#0F172A] selection:bg-emerald-500/30">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50 via-[#F0FDF4] to-[#F0FDF4] -z-10" />
 
             <main className="container mx-auto px-4 py-8 min-h-screen flex flex-col items-center justify-center">
                 {error && (
-                    <div className="w-full max-w-2xl bg-red-500/10 border border-red-500/50 text-red-200 p-4 rounded-xl mb-6 text-center animate-in fade-in slide-in-from-top-4">
+                    <div className="w-full max-w-2xl bg-red-50 border border-red-200 text-red-600 p-4 rounded-xl mb-6 text-center animate-in fade-in slide-in-from-top-4">
                         {error}
                     </div>
                 )}

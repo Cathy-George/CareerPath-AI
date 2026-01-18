@@ -15,18 +15,18 @@ const InputForm = ({ onAnalyze, loading }) => {
     return (
         <div className="w-full max-w-2xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="text-center space-y-4">
-                <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                <h2 className="text-4xl font-extrabold text-[#15803D]">
                     Career Skill Gap Analyzer
                 </h2>
-                <p className="text-slate-400 text-lg">
+                <p className="text-slate-600 text-lg">
                     Discover your path to your dream job with AI-powered analysis
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-slate-800/50 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 shadow-2xl space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl border border-emerald-100 shadow-xl space-y-6">
                 <div className="space-y-2">
-                    <label className="flex items-center gap-2 text-sm font-medium text-slate-300">
-                        <Target className="w-4 h-4 text-blue-400" />
+                    <label className="flex items-center gap-2 text-sm font-medium text-[#0F172A]">
+                        <Target className="w-4 h-4 text-[#15803D]" />
                         Target Role
                     </label>
                     <input
@@ -34,21 +34,21 @@ const InputForm = ({ onAnalyze, loading }) => {
                         value={targetRole}
                         onChange={(e) => setTargetRole(e.target.value)}
                         placeholder="e.g. Senior Frontend Engineer"
-                        className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all placeholder:text-slate-600 text-white"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-400 text-[#0F172A]"
                         required
                     />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="flex items-center gap-2 text-sm font-medium text-slate-300">
-                        <Code2 className="w-4 h-4 text-emerald-400" />
+                    <label className="flex items-center gap-2 text-sm font-medium text-[#0F172A]">
+                        <Code2 className="w-4 h-4 text-[#15803D]" />
                         Current Skills
                     </label>
                     <textarea
                         value={currentSkills}
                         onChange={(e) => setCurrentSkills(e.target.value)}
                         placeholder="e.g. React, JavaScript, HTML, CSS, Git"
-                        className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-600 text-white min-h-[120px]"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-400 text-[#0F172A] min-h-[120px]"
                         required
                     />
                 </div>
@@ -56,7 +56,7 @@ const InputForm = ({ onAnalyze, loading }) => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-[#15803D] hover:bg-[#166534] text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-900/10 hover:shadow-emerald-900/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                     {loading ? (
                         <>

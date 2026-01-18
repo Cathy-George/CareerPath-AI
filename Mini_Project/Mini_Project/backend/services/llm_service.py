@@ -35,15 +35,12 @@ def analyze_career_path(target_role: str, current_skills: str) -> Dict[str, Any]
     - Current Skills: "{current_skills}"
 
     **Instructions:**
-    1. **Compare** the 'Current Skills' against the standard, modern industry requirements for the 'Target Role'.
-    2. **Classify** skills into these categories:
-        - **Strong Skills**: ONLY list skills that are EXPLICITLY listed in the 'Current Skills' input AND are relevant to the role.
-        - **Missing**: List ALL key skills required for the '{target_role}' that are not in the user's list. **Do not stop at just one.** Include:
-            - **Languages** (e.g., JavaScript, TypeScript)
-            - **Frameworks** (e.g., React, Angular, Vue)
-            - **Tools/State** (e.g., Git, Redux, Testing)
+    1. **Analyze** the user's 'Current Skills' list.
+    2. **Classify** matched skills:
+        - **Strong Skills**: You MUST include EVERY skill from the 'Current Skills' input that is valid for the '{target_role}'. Do NOT exclude foundational skills. For example, if the role is Frontend and input has HTML/CSS, they MUST be listed here.
+        - **Missing**: List critical skills for '{target_role}' that are completely absent from the 'Current Skills'.
     3. **Determine Seniority**: Assess the user's *current* competency level (Junior/Mid/Senior) based on provided skills.
-    4. **Generate Plan**: Create a realistic 30-60-90 day plan to learn the **Missing** skills.
+    4. **Calculate Match**: Calculate a realistic match percentage based on the ratio of strong skills to total required skills. **IMPORTANT**: If the user has ANY strong/relevant skills (even just one), the match percentage MUST be greater than 0 (minimum 10%). Do not return 0% if there are strong skills.
 
     **Output JSON Structure:**
     {{
@@ -54,39 +51,40 @@ def analyze_career_path(target_role: str, current_skills: str) -> Dict[str, Any]
             "reasoning": "<Briefly explain the gap.>"
         }},
         "skill_gap_report": {{
-            "strong": ["<Exact matches from user input>"],
+            "strong": ["<Relevant skills found in user input>"],
             "missing": ["<Comprehensive list of missing standard requirements>"]
         }},
         "study_plan": {{
-            "day_30": ["<Focus on critical missing basics>"],
-            "day_60": ["<Intermediate concepts & Frameworks>"],
-            "day_90": ["<Advanced topics, Tools & Projects>"]
+            "week_1": ["<Topic 1>", "<Topic 2>"],
+            "week_2": ["<Topic 1>", "<Topic 2>"],
+            "week_3": ["<Topic 1>", "<Topic 2>"],
+            "week_4": ["<Topic 1>", "<Topic 2>"]
         }},
         "project_suggestions": [
             {{
-                "title": "<title>",
-                "description": "<description>",
-                "tech_stack": ["<tech1>", "<tech2>"]
+                "name": "<Project Name>",
+                "description": "<Brief Description>",
+                "technologies": ["<Tech 1>", "<Tech 2>"]
             }}
         ],
         "learning_resources": [
             {{
-                "name": "<Resource Name>",
-                "url": "<URL or brief description>",
-                "type": "<Course/Article/Repo>"
+                "title": "<Resource Title>",
+                "type": "<Course/Article/Video>",
+                "link": "<URL or description>"
             }}
         ],
         "github_repositories": [
-             {{
+            {{
                 "name": "<Repo Name>",
-                "description": "<What it contains>",
-                "search_term": "<Search query to find it>" 
-             }}
+                "description": "<Description>",
+                "link": "<URL>"
+            }}
         ],
         "alternative_roles": [
             {{
                 "role": "<Role Name>",
-                "match_potential": "<High/Medium>"
+                "match": "<High/Medium/Low>"
             }}
         ]
     }}
