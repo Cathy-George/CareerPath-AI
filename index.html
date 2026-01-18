@@ -1,13 +1,172 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>skill</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+import React from 'react';
+
+// --- Sub-Components ---
+
+const Navbar = () => (
+  <nav className="flex justify-between items-center p-6 bg-slate-900 border-b border-slate-800">
+    <div className="text-2xl font-bold text-blue-500">CareerPath AI</div>
+    <div className="hidden md:flex space-x-8 font-medium">
+      <a href="#home" className="text-slate-100 hover:text-blue-400 transition">Home</a>
+      <a href="#path" className="text-slate-100 hover:text-blue-400 transition">My Path</a>
+      <a href="#about" className="text-slate-100 hover:text-blue-400 transition">About</a>
+    </div>
+    <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-500 transition">
+      Get Started
+    </button>
+  </nav>
+);
+
+const Hero = () => (
+  <header className="container mx-auto px-6 py-20 text-center lg:text-left lg:flex items-center">
+    <div className="lg:w-1/2">
+      <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-6 text-slate-100">
+        Unlock Your Potential: Chart Your Career with <span className="text-blue-500">AI Insights</span>
+      </h1>
+      <p className="text-lg text-slate-400 mb-8 max-w-xl">
+        [cite_start]CareerPath AI helps students and job seekers identify skill gaps, recommend new skills, and explore alternative roles for a clear career journey. [cite: 8, 9]
+      </p>
+      <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg shadow-blue-900/20 hover:bg-blue-500 transition">
+        Get Started
+      </button>
+    </div>
+    <div className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+      <div className="relative">
+        <div className="absolute -inset-4 bg-blue-500/20 blur-3xl rounded-full"></div>
+        <div className="relative bg-slate-800 border border-slate-700 p-12 rounded-3xl shadow-2xl text-blue-500">
+          <i className="fas fa-microchip text-8xl"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
+const Features = () => {
+  const features = [
+    {
+      title: "Pinpoint Skill Gaps",
+      [cite_start]desc: "Effortlessly identify the skills you need to bridge between your current abilities and your desired job role. [cite: 17, 18]",
+      icon: "fa-search-plus"
+    },
+    {
+      title: "Personalized Skill Recommendations",
+      [cite_start]desc: "Receive tailored suggestions for courses, certifications, and resources to acquire in-demand skills. [cite: 19]",
+      icon: "fa-graduation-cap"
+    },
+    {
+      title: "Explore Alternative Paths",
+      [cite_start]desc: "Discover related job roles that align with your existing skill set, opening new opportunities. [cite: 21]",
+      icon: "fa-route"
+    }
+  ];
+
+  return (
+    <section className="bg-slate-800/50 py-24">
+      <div className="container mx-auto px-6">
+        [cite_start]<h2 className="text-3xl font-bold text-center mb-16 text-slate-100">How CareerPath AI Empowers Your Journey [cite: 16]</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <div key={i} className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition">
+              <div className="text-blue-500 text-4xl mb-6"><i className={`fas ${f.icon}`}></i></div>
+              <h3 className="text-xl font-bold mb-4 text-slate-100">{f.title}</h3>
+              <p className="text-slate-400">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Process = () => (
+  <section className="py-24">
+    <div className="container mx-auto px-6">
+      [cite_start]<h2 className="text-3xl font-bold text-center mb-20 text-slate-100">Our Simple 3-Step Process [cite: 22]</h2>
+      <div className="relative flex flex-col md:flex-row justify-between items-center space-y-16 md:space-y-0">
+        <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-800 -translate-y-1/2 z-0"></div>
+        
+        [cite_start]<Step number="1" title="Define Your Ambition" desc="Tell us your dream job and list your current skills. Our AI does the rest. [cite: 23, 24]" />
+        [cite_start]<Step number="2" title="Smart Analysis" desc="Our system evaluates your profile against market demands and role requirements. [cite: 25, 26]" />
+        [cite_start]<Step number="3" title="Discover Your Path" desc="Get actionable insights, recommended skills, and exciting new career options. [cite: 30, 31]" />
+      </div>
+    </div>
+  </section>
+);
+
+const Step = ({ number, title, desc }) => (
+  <div className="relative z-10 flex-1 text-center px-4">
+    <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-xl shadow-blue-900/40">
+      {number}
+    </div>
+    <h4 className="font-bold text-xl mb-3 text-slate-100">{title}</h4>
+    <p className="text-slate-400">{desc}</p>
+  </div>
+);
+
+const Testimonials = () => (
+  <section className="py-24 bg-slate-800/30">
+    <div className="container mx-auto px-6">
+      [cite_start]<h2 className="text-3xl font-bold text-center mb-16 text-slate-100">What Our Users Say [cite: 27]</h2>
+      <div className="grid md:grid-cols-2 gap-8">
+        <Testimonial 
+          [cite_start]text="CareerPath AI helped me pivot my career with confidence. The skill recommendations were spot-on and easy to follow! [cite: 33]"
+          name="Sarah Chen"
+          [cite_start]role="Aspiring Data Scientist [cite: 34, 35]"
+          initials="SC"
+        />
+        <Testimonial 
+          text="As a student, understanding future career paths can be overwhelming. [cite_start]This tool made it incredibly clear and actionable, guiding my studies. [cite: 36, 37, 38]"
+          name="David Lee"
+          [cite_start]role="Computer Science Student [cite: 39, 40]"
+          initials="DL"
+          color="bg-indigo-500"
+        />
+      </div>
+    </div>
+  </section>
+);
+
+const Testimonial = ({ text, name, role, initials, color = "bg-blue-500" }) => (
+  <div className="p-10 bg-slate-800 rounded-3xl border border-slate-700 relative">
+    <i className="fas fa-quote-left text-blue-500/20 text-5xl absolute top-6 left-6"></i>
+    <p className="mb-6 text-slate-300 relative z-10 text-lg leading-relaxed">{text}</p>
+    <div className="flex items-center">
+      <div className={`w-12 h-12 ${color} rounded-full flex items-center justify-center font-bold mr-4 text-white`}>
+        {initials}
+      </div>
+      <div>
+        <div className="font-bold text-white">{name}</div>
+        <div className="text-sm text-blue-400">{role}</div>
+      </div>
+    </div>
+  </div>
+);
+
+const Footer = () => (
+  <footer className="bg-slate-950 text-white py-24 border-t border-slate-800">
+    <div className="container mx-auto px-6 text-center">
+      [cite_start]<h2 className="text-4xl font-bold mb-6 text-slate-100">Ready to Map Your Future? [cite: 42]</h2>
+      [cite_start]<p className="mb-10 text-slate-400 text-lg">Join thousands of users who are taking control of their career journey with CareerPath AI. [cite: 43, 44]</p>
+      <button className="bg-blue-600 text-white px-12 py-4 rounded-xl font-bold text-xl hover:bg-blue-500 shadow-2xl shadow-blue-600/20 transition">
+        [cite_start]Start Your Career Path Now [cite: 45]
+      </button>
+      <div className="mt-20 pt-10 border-t border-slate-900 text-slate-500 text-sm">
+        &copy; 2020 CareerPath AI. [cite_start]All rights reserved. [cite: 46]
+      </div>
+    </div>
+  </footer>
+);
+
+// --- Main App ---
+
+export default function CareerPathLanding() {
+  return (
+    <div className="bg-slate-900 min-h-screen font-sans selection:bg-blue-500/30">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Process />
+      <Testimonials />
+      <Footer />
+    </div>
+  );
+}

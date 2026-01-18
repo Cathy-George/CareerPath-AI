@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path Recommendations - CareerPath AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .custom-glass {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+        }
+        .skill-chip {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-50 font-sans min-h-screen">
+
+    <nav class="flex justify-between items-center px-10 py-5 bg-[#0f172a] border-b border-cyan-500/20 sticky top-0 z-50">
+        <div class="text-2xl font-bold text-cyan-400">CareerPath AI</div>
+        <div class="hidden md:flex space-x-10 text-slate-300 font-semibold text-base">
+            <a href="#" class="hover:text-cyan-400">Home</a>
+            <a href="#" class="text-cyan-400">My Path</a>
+            <a href="#" class="hover:text-cyan-400">About</a>
+        </div>
+        <button class="bg-cyan-500 text-[#020617] px-6 py-2 rounded-full font-bold text-base hover:bg-cyan-400 transition">
+            Get Started
+        </button>
+    </nav>
+
+    <header class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-extrabold text-white">Career Path Recommendations</h1>
+    </header>
+
+    <main class="container mx-auto px-6 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <div class="lg:col-span-8 space-y-8">
+            
+            <section class="custom-glass rounded-3xl p-8 shadow-xl">
+                <div class="flex items-center gap-6 mb-8">
+                    <div class="p-4 bg-cyan-500/10 rounded-2xl border border-cyan-500/20">
+                        <i class="fas fa-id-badge text-cyan-400 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-bold text-cyan-500 uppercase tracking-widest">Career Profile</h2>
+                        <div class="flex flex-col mt-1">
+                            <span class="text-base text-slate-400">Your Desired Role:</span>
+                            <span class="text-3xl font-bold text-white">Frontend Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-white/10">
+                    <h3 class="text-base font-bold text-cyan-500 uppercase tracking-widest mb-5">Current Skills:</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">HTML</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">CSS</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">JavaScript</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">React</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">Tailwind CSS</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">Git</span>
+                        <span class="skill-chip px-4 py-2 rounded-xl text-base font-semibold">Figma</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="custom-glass rounded-3xl p-8 shadow-xl">
+                <h2 class="text-2xl font-bold mb-8 text-white flex items-center gap-4">
+                    <i class="fas fa-clipboard-check text-cyan-400"></i>
+                    Evaluated Role Requirements
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-sm font-bold text-cyan-500 uppercase tracking-wider mb-3">Core Languages</h3>
+                        <div class="space-y-2">
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">HTML</span>
+                            </div>
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">CSS & JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold text-cyan-500 uppercase tracking-wider mb-3">Frameworks</h3>
+                        <div class="space-y-2">
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">React</span>
+                            </div>
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold text-cyan-500 uppercase tracking-wider mb-3">Styling</h3>
+                        <div class="space-y-2">
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Tailwind CSS</span>
+                            </div>
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Sass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold text-cyan-500 uppercase tracking-wider mb-3">Tooling & Version Control</h3>
+                        <div class="space-y-2">
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Git</span>
+                            </div>
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Webpack & Babel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold text-cyan-500 uppercase tracking-wider mb-3">UI/UX Principles</h3>
+                        <div class="space-y-2">
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Responsive Design</span>
+                            </div>
+                            <div class="p-4 bg-[#020617]/40 rounded-xl border border-white/5">
+                                <span class="text-lg font-semibold text-slate-200">Accessibility (A11y)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+            <div class="bg-[#1e293b]/40 border border-white/10 rounded-3xl p-8 shadow-xl">
+                <h2 class="text-base font-bold mb-8 text-cyan-500/80 uppercase tracking-widest">Alternative Job Roles</h2>
+                <div class="space-y-10">
+                    <div class="group cursor-pointer">
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition">UI Developer</h3>
+                        <p class="text-sm mt-3 leading-relaxed text-slate-300 font-medium">Focus on translating designs into interactive interfaces.</p>
+                    </div>
+
+                    <div class="group cursor-pointer pt-6 border-t border-white/5">
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition">React Developer</h3>
+                        <p class="text-sm mt-3 leading-relaxed text-slate-300 font-medium">Build robust user interfaces and components using React.</p>
+                    </div>
+
+                    <div class="group cursor-pointer pt-6 border-t border-white/5">
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition">Web Designer</h3>
+                        <p class="text-sm mt-3 leading-relaxed text-slate-300 font-medium">Combine design principles with front-end skills.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="py-12 bg-[#020617] border-t border-white/5 text-center text-slate-600 text-sm">
+        &copy; 2026 CareerPath AI. All rights reserved.
+    </footer>
+
+</body>
+</html>
