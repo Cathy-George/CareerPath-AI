@@ -167,7 +167,7 @@ const Footer = ({ onGetStarted }) => (
         onClick={onGetStarted}
         className="bg-blue-600 text-white px-12 py-3 rounded-full font-bold text-xl hover:bg-blue-500 shadow-2xl shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 hover:shadow-blue-500/40"
       >
-        Start Your Career Path Now
+        Start Your Career Instantly
       </button>
       <div className="mt-20 pt-10 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
         <p>&copy; 2026 CareerPath AI. All rights reserved.</p>
