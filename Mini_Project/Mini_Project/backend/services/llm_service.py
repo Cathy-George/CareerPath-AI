@@ -41,6 +41,7 @@ def analyze_career_path(target_role: str, current_skills: str) -> Dict[str, Any]
         - **Missing**: List critical skills for '{target_role}' that are completely absent from the 'Current Skills'.
     3. **Determine Seniority**: Assess the user's *current* competency level (Junior/Mid/Senior) based on provided skills.
     4. **Calculate Match**: Calculate a realistic match percentage based on the ratio of strong skills to total required skills. **IMPORTANT**: If the user has ANY strong/relevant skills (even just one), the match percentage MUST be greater than 0 (minimum 10%). Do not return 0% if there are strong skills.
+    5. **Calculate Readiness**: The readiness score (integer 0-10) MUST be consistent with the match percentage. (Formula: Match Percentage / 10). For example, 50% match = 5/10 readiness.
 
     **Output JSON Structure:**
     {{
