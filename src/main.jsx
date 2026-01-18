@@ -22,5 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/recommendations" element={<Recommendations />} />
       </Routes>
     </BrowserRouter>
+    <SkillInput/>
+    <Recommendations/>
   </StrictMode>
 )
